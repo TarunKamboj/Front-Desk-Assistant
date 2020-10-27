@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'account/Team.css' %}" type="text/css"/>
+        <title>Team</title>
+    </head>
+    <body>
+     <div class="header">
+      <div class="inner_header">
+        <div class="logo">
+            <img src="{% static 'account/logo1.png' %}" height="135">
+        </div>
+        {% if not user.is_authenticated %}
+        <div class="login">
+            <a href="{% url 'login' %}"><li>Login</li></a>
+        </div>
+        {% else %}
+        <div class="login">
+            <a href="{% url 'logout' %}"><li>Logout</li></a>
+        </div>
+        {% endif %}
+        <div class="innerhead">
+          <ul class="nav">
+            <a href="{% url 'account_app:home' %}"><li>Home</li></a>
+            <a href="{% url 'account_app:about' %}"><li>About us</li></a>
+            <a href="{% url 'account_app:support' %}"><li>Support</li></a>
+          </ul>
+        </div>
+        </div>
+     </div>
+       <div class="wrapper">
+          <div class="card">
+            <img src="{% static 'account/icons/front.png' %}" height=200 class="titlelogo">
+            <div class="content">
+              <p>Surbhi Rajput</p>
+              <p>Prateek Gupta</p>
+              <p>Shaswat Mishra</p>
+              <p>Moavia adeeb</p>
+              <p>Niranjan Mishra</p>
+            </div>
+          </div>
+         <div class="card">
+            <img src="{% static 'account/icons/django.png' %}" height=200 class="titlelogo">
+            <div class="content">
+                <p>Sunny Sahu</p>
+                <p>Prabhat Tyagi</p>
+                <p>Vikal Rathi</p>
+                <p>MD Hasan</p>
+                <p>Shuchita Jain</p>
+              </div>
+          </div>
+          <div class="card">
+              <img src="{% static 'account/icons/Android.png' %}" height=200 class="titlelogo">
+              <div class="content">
+                  <p>Himanshu Chauhan</p>
+                  <p>Saumya Rastogi</p>
+                </div>
+          </div>
+          <div class="card">
+              <img src="{% static 'account/icons/mongo.png' %}" height=200 class="titlelogo">
+                <div class="content">
+                  <p>Ayushi Goel</p>
+                  <p>Tarun Kamboj</p>
+                </div>
+        </div>
+       </div>
+    </body>
+</html>
